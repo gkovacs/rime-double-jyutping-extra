@@ -861,6 +861,7 @@ key_binder:
     - {accept: "Control+Shift+F", toggle: zh_simp, when: always}
     - {accept: "Control+Shift+t", toggle: zh_tw, when: always}
     - {accept: "Control+Shift+T", toggle: zh_tw, when: always}
+    - {accept: "F16", select: td_pinyin_flypy_extra, when: always}
 
 recognizer:
   patterns:
