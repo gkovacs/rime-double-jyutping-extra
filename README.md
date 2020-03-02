@@ -1,4 +1,4 @@
-# rime-double-jyutping-display
+# rime-double-jyutping-extra
 
 ## About
 
