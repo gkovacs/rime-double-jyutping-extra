@@ -1,8 +1,8 @@
-# rime-double-jyutping
+# rime-double-jyutping-display
 
 ## About
 
-This is a layout for typing in Shuangpin (双拼) with the Flypy (小鹤双拼) layout. Tones can be entered as follows:
+This is a layout for typing in a custom Shuangpin (双拼) layout for Cantonese (粤语). It will display Mandarin pronunciations as you type in Cantonese. You can type `q` to start looking up by Mandarin pronunciations via Flypy Shuangpin (小鹤双拼). Tones can be entered as follows:
 
 * Tone 1: `;`
 * Tone 2: `/`
@@ -10,6 +10,7 @@ This is a layout for typing in Shuangpin (双拼) with the Flypy (小鹤双拼) 
 * Tone 4: `x`
 * Tone 5: `v`
 * Tone 6: `.`
+
 
 ## Installing
 
@@ -20,66 +21,18 @@ cd ~/Library/Rime
 wget https://git.io/rime-install
 ```
 
-Then install `gkovacs/rime-td-pinyin-flypy` using plum:
+Then install dependencies and `gkovacs/rime-double-jyutping-extra` using plum:
 
 ```bash
-bash rime-install gkovacs/rime-td-pinyin-flypy
+bash rime-install gkovacs/rime-double-jyutping gkovacs/rime-td-pinyin-flypy gkovacs/rime-double-jyutping-display gkovacs/rime-td-pinyin-flypy-display gkovacs/rime-double-jyutping-extra
 ```
 
-Finally edit `default.custom.yaml` and add `td_pinyin_flypy` to the schema list:
+Finally edit `default.custom.yaml` and add `double_jyutping_extra` to the schema list:
 
 ```bash
 patch:
   schema_list:
-    - schema: international
+    - schema: double_jyutping_extra
 ```
 
 Now reload RIME and it should appear under your layouts.
-
-Note that if Tone 4 is not working for you, please ensure you define `key_binder/bindings` in `default.custom.yaml`, like the following:
-
-```yaml
-patch:
-  schema_list:
-    - schema: td_pinyin_flypy
-  "menu/page_size": 9
-  ascii_composer/switch_key:
-    Shift_L: noop
-    Shift_R: noop
-  key_binder:
-    bindings:
-      - {accept: "Control+p", send: Up, when: composing}
-      - {accept: "Control+n", send: Down, when: composing}
-      - {accept: "Control+b", send: Left, when: composing}
-      - {accept: "Control+f", send: Right, when: composing}
-      - {accept: "Control+a", send: Home, when: composing}
-      - {accept: "Control+e", send: End, when: composing}
-      - {accept: "Control+d", send: Delete, when: composing}
-      - {accept: "Control+k", send: "Shift+Delete", when: composing}
-      - {accept: "Control+h", send: BackSpace, when: composing}
-      - {accept: "Control+g", send: Escape, when: composing}
-      - {accept: "Control+bracketleft", send: Escape, when: composing}
-      - {accept: "Alt+v", send: Page_Up, when: composing}
-      - {accept: "Control+v", send: Page_Down, when: composing}
-      - {accept: ISO_Left_Tab, send: Page_Up, when: composing}
-      - {accept: "Shift+Tab", send: Page_Up, when: composing}
-      - {accept: Tab, send: Page_Down, when: composing}
-      - {accept: minus, send: Page_Up, when: has_menu}
-      - {accept: equal, send: Page_Down, when: has_menu}
-      - {accept: "Control+Shift+1", select: .next, when: always}
-      - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
-      - {accept: "Control+Shift+3", toggle: full_shape, when: always}
-      - {accept: "Control+Shift+4", toggle: simplification, when: always}
-      - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
-      - {accept: "Control+Shift+exclam", select: .next, when: always}
-      - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
-      - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
-      - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
-      - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
-      - {accept: "Control+period", toggle: ascii_punct, when: always}
-      - {accept: "Control+Shift+a", toggle: ascii_mode, when: always}
-      - {accept: "Control+Shift+A", toggle: ascii_mode, when: always}
-      - {accept: "Control+Shift+z", toggle: .next, when: always}
-      - {accept: "Control+Shift+Z", toggle: .next, when: always}
-      - {accept: "Shift+space", toggle: noop, when: always} #取消全半角切换
-```
