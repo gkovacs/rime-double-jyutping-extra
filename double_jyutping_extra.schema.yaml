@@ -19,6 +19,7 @@ schema:
     - leimaau_jyutping_zhuyin_nospaces
     - leimaau_zhuyin_jyutping_nospaces
     - td_pinyin_flypy_display
+    - double_jyutping_display
 
 switches:
   - name: ascii_mode
@@ -315,7 +316,7 @@ pinyin_lookup:
   prefix: "`"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
   dictionary: terra_pinyin.extended
-  prism: td_pinyin_flypy
+  prism: td_pinyin_flypy_display
   preedit_format:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
@@ -526,7 +527,7 @@ putonghua_to_jyutping_lookup:
   prefix: "&"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
   dictionary: terra_pinyin.extended
-  prism: td_pinyin_flypy
+  prism: td_pinyin_flypy_display
   preedit_format:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
