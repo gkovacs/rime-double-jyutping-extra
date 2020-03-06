@@ -861,7 +861,20 @@ key_binder:
     - {accept: "Control+Shift+F", toggle: zh_simp, when: always}
     - {accept: "Control+Shift+t", toggle: zh_tw, when: always}
     - {accept: "Control+Shift+T", toggle: zh_tw, when: always}
+    - {accept: "Control+Shift+n", select: japanese, when: always}
+    - {accept: "Control+Shift+N", select: japanese, when: always}
+    - {accept: "Control+Shift+k", select: korean, when: always}
+    - {accept: "Control+Shift+K", select: korean, when: always}
+    - {accept: "Control+Shift+v", select: vietnamese, when: always}
+    - {accept: "Control+Shift+V", select: vietnamese, when: always}
+    - {accept: "Control+Shift+j", select: double_jyutping_extra, when: always}
+    - {accept: "Control+Shift+J", select: double_jyutping_extra, when: always}
+    - {accept: "Control+Shift+p", select: td_pinyin_flypy_extra, when: always}
+    - {accept: "Control+Shift+P", select: td_pinyin_flypy_extra, when: always}
+    - {accept: "Control+Shift+l", select: international, when: always}
+    - {accept: "Control+Shift+L", select: international, when: always}
     - {accept: "F16", select: td_pinyin_flypy_extra, when: always}
+    - {accept: "F19", select: international, when: always}
 
 recognizer:
   patterns:
