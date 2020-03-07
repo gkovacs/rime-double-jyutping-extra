@@ -2,9 +2,9 @@
 
 ## About
 
-This is a layout for typing in a custom Shuangpin (双拼) layout for Cantonese (粤语). It will display Mandarin pronunciations as you type in Cantonese. You can type `q` to start looking up by Mandarin pronunciations via the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy/blob/master/README.md) method.
+This is a layout for typing in a custom Shuangpin (雙拼 / 双拼) layout for Cantonese (粵語 / 粤语 / 廣東話 / 广东话). It will display Mandarin pronunciations as you type in Cantonese. You can type `q` to start looking up by Mandarin pronunciations via the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy-extra/blob/master/README.md) method.
 
-## Double Jyutping with Optional Tones (双粤拼)
+## Double Jyutping with Optional Tones (粵語雙拼 / 粤语双拼)
 
 ![](images/double-jyutping.png)
 
@@ -22,7 +22,7 @@ For initials which can be followed by either i or ei (d, n, s), -ei gets relocat
 
 "m" 唔 is entered by typing `mm`
 
-You can type either `q` or "\`" to temporarily switch to Putonghua lookup mode, if you don't know the Cantonese pronunciation for a word. In this mode you can enter words using the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy/blob/master/README.md) method, and it will display the Jyutping next to the Chinese characters.
+You can type either `q` or "\`" to temporarily switch to Putonghua lookup mode, if you don't know the Cantonese pronunciation for a word. In this mode you can enter words using the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy-extra/blob/master/README.md) method, and it will display the Jyutping next to the Chinese characters.
 
 ## Installing
 
