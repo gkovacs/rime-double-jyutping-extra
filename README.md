@@ -2,14 +2,7 @@
 
 ## About
 
-This is a layout for typing in a custom Shuangpin (双拼) layout for Cantonese (粤语). It will display Mandarin pronunciations as you type in Cantonese. You can type `q` to start looking up by Mandarin pronunciations via Flypy Shuangpin (小鹤双拼). Tones can be entered as follows:
-
-* Tone 1: `;`
-* Tone 2: `/`
-* Tone 3: `,`
-* Tone 4: `x`
-* Tone 5: `v`
-* Tone 6: `.`
+This is a layout for typing in a custom Shuangpin (双拼) layout for Cantonese (粤语). It will display Mandarin pronunciations as you type in Cantonese. You can type `q` to start looking up by Mandarin pronunciations via [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy/blob/master/README.md).
 
 ## Double Jyutping with Optional Tones (双粤拼)
 
