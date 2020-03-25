@@ -326,7 +326,7 @@ translator:
   disable_user_dict_for_patterns:
     - "^oj.*$"
     - "^oy.*$"
-    - "^op.*$"
+    - "^on.*$"
     - "^ok.*$"
     - "^ov.*$"
     - "^oi.*$"
