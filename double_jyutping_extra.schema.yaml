@@ -56,7 +56,7 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - affix_segmentor@pinyin_lookup
+    #- affix_segmentor@pinyin_lookup
     - affix_segmentor@putonghua_to_jyutping_lookup
     - affix_segmentor@jyutping_to_putonghua_lookup
     - affix_segmentor@putonghua_to_cangjie_lookup
@@ -70,7 +70,7 @@ engine:
     - punct_translator
     - script_translator
     - reverse_lookup_translator
-    - script_translator@pinyin_lookup
+    #- script_translator@pinyin_lookup
     - script_translator@putonghua_to_jyutping_lookup
     - script_translator@jyutping_to_putonghua_lookup
     - script_translator@putonghua_to_cangjie_lookup
@@ -82,7 +82,7 @@ engine:
     - simplifier@zh_simp
     - simplifier@zh_tw
     - uniquifier
-    - reverse_lookup_filter@pinyin_reverse_lookup
+    #- reverse_lookup_filter@pinyin_reverse_lookup
     - reverse_lookup_filter@putonghua_to_jyutping_reverse_lookup
     - reverse_lookup_filter@jyutping_to_putonghua_reverse_lookup
     - reverse_lookup_filter@putonghua_to_cangjie_reverse_lookup
@@ -323,6 +323,16 @@ translator:
     # - 'xform ([aeioumngptkqrwy])v $1⁵'
     #- 'xform r aa'
     #- 'xform q ng'
+  disable_user_dict_for_patterns:
+    - "^oj.*$"
+    - "^oy.*$"
+    - "^op.*$"
+    - "^ok.*$"
+    - "^ov.*$"
+    - "^oi.*$"
+    - "^os.*$"
+    - "^od.*$"
+    - "^of.*$"
 
 abc_segmentor:
   extra_tags:
@@ -871,7 +881,7 @@ putonghua_to_cangjie_lookup:
   spelling_hints: 10
   dictionary: terra_pinyin_tradsimp #pinyin_simp # terra_pinyin_tradsimp
   prism: td_pinyin_flypy
-  prefix: "`F"
+  prefix: "of"
   suffix: "'"
   tips: 〔拼音〕
   preedit_format:
@@ -1079,7 +1089,7 @@ putonghua_to_cangjie_reverse_lookup:
 
 jyutping_to_cangjie_lookup:
   tag: jyutping_to_cangjie_lookup
-  prefix: "`J"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
+  prefix: "oj"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
   spelling_hints: 10
   dictionary: jyutping_tradsimp
@@ -1191,7 +1201,7 @@ jyutping_to_cangjie_reverse_lookup:
 
 international_lookup:
   tag: international_lookup
-  prefix: "`L"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
+  prefix: "oi"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
   enable_user_dict: false
   enable_sentence: true
@@ -1211,7 +1221,7 @@ stroke_lookup:
   sentence_over_completion: false
   max_phrase_length: 1
   spelling_hints: 10
-  prefix: "`H"
+  prefix: "os"
   suffix: "`"
   tips: 【笔】
   preedit_format:
@@ -1229,7 +1239,7 @@ cangjie5_lookup:    # 倉頡五代反查
   enable_sentence: false
   sentence_over_completion: false
   max_phrase_length: 1
-  prefix: "`C"
+  prefix: "od"
   suffix: "`"
   tips: 【仓】
   preedit_format:
@@ -1281,13 +1291,13 @@ recognizer:
     email: "^[a-z][-_.0-9a-z]*@.*$"
     uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp:|mailto:).*$"
-    pinyin_lookup: "`[a-z;/,.]*`?$"
-    putonghua_to_jyutping_lookup: "q[a-z;/,.]*`?$"
-    putonghua_to_cangjie_lookup: "`F[a-z;/,.]*`?$"
-    jyutping_to_cangjie_lookup: "`J[a-z;/,.]*`?$"
-    international_lookup: "`L[a-zA-Z;/,.]*`?$"
-    stroke_lookup: "`H[a-z]*`?$"
-    cangjie5_lookup: "`C[a-z]*`?$"
+    #pinyin_lookup: "^`[a-z;/,.]*`?$"
+    putonghua_to_jyutping_lookup: "^q[a-z;/,.]*`?$"
+    putonghua_to_cangjie_lookup: "^of[a-z;/,.]*`?$"
+    jyutping_to_cangjie_lookup: "^oj[a-z;/,.]*`?$"
+    international_lookup: "^oi[a-zA-Z;/,.]*`?$"
+    stroke_lookup: "^os[a-z]*`?$"
+    cangjie5_lookup: "^od[a-z]*`?$"
     punct: ^/[0-9]?[a-z]*$
 
 zh_simp:
