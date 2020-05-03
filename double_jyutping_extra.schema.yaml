@@ -777,12 +777,13 @@ jyutping_to_putonghua_lookup:
   #prefix: "`J"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   #suffix: "`"
   spelling_hints: 10
-  dictionary: leimaau_jyutping
-  prism: double_jyutping_display
+  dictionary: leimaau_jyutping.cangjie5
+  prism: double_jyutping_cangjie5
   preedit_format:
+    - 'xlit ABCDEFGHIJKLMNOPQRSTUVWXYZ 日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重'
     - xform/(^|[ '])u/$1G/
     - xform/(^|[ '])y/$1Q/
-    - xform/(^|[ '])aa/$1N/ # aa => ng
+    - xform/(^|[ '])aa/$1Ñ/ # aa => ng
     - xform/(^|[ '])mm/$1M/ # mm => m
     - xform/(^|[ '])a/$1N/
     - xform/(^|[ '])e/$1E/
@@ -790,31 +791,37 @@ jyutping_to_putonghua_lookup:
     - xform/(^|[ '])(\w)(\w)o/$1$2$3P/
     - xform/(^|[ '])(\w)(\w)i/$1$2$3K/
     - xform / Á
+    # tones ng/m syllable
+    - xform/(^|[ '])(Ñ|M);/$1$2¹/
+    - xform/(^|[ '])(Ñ|M)Á/$1$2²/
+    - xform/(^|[ '])(Ñ|M),/$1$2³/
+    - xform/(^|[ '])(Ñ|M)x/$1$2⁴/
+    - xform/(^|[ '])(Ñ|M)v/$1$2⁵/
     # tones non-ptk
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.);/$1$2$3¹/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)x/$1$2$3⁴/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.);/$1$2$3¹/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)x/$1$2$3⁴/
     # - xform (^|[ '])(\w)([abcdefghijklmnopqrstuvwxyzNM])/ $1$2$3²
     #- xform/(^|[ '])(\w)([abcdefghijklmnopqrstuvwxyzNM,Á;\.])Á/$1$2$3²/
     #- xform/(^|[ '])(\w)([Á])Á/$1$2$3²/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)Á/$1$2$3²/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)\./$1$2$3⁶/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.),/$1$2$3³/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)v/$1$2$3⁵/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)Á/$1$2$3²/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)\./$1$2$3⁶/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.),/$1$2$3³/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)v/$1$2$3⁵/
     # tones ptk
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK]);/$1$2$3$4¹/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK])x/$1$2$3$4⁴/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK]);/$1$2$3$4¹/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK])x/$1$2$3$4⁴/
     # - 'xform ([abcdefghijklmnopqrstuvwxyzNM])([PTK])/ $1$2²'
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK])Á/$1$2$3$4²/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK])\./$1$2$3$4⁶/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK]),/$1$2$3$4³/
-    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|M|,|Á|;|\.)([PTK])v/$1$2$3$4⁵/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK])Á/$1$2$3$4²/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK])\./$1$2$3$4⁶/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK]),/$1$2$3$4³/
+    - xform/(^|[ '])(\w)(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|N|,|Á|;|\.)([PTK])v/$1$2$3$4⁵/
     # - "xform (^|[ '])(\w)([aeioumngNM]), $1$2$3³"
     # - "xform (^|[ '])(\w)([aeioumngNM])v $1$2$3⁵"
     - xform/(^|[ '])(j|z|d|g|c|k|l|s)wK/$1$2oeK/
     - xform/(^|[ '])(c|z|d|l|s)wT/$1$2eoT/
     - xform/(^|[ '])(h|t|z)w/$1$2oe/
     - xform/(^|[ '])(G|Q|g|k|p|f|b|m|w)w/$1$2ui/
-    - xform/(^|[ '])([wpGkfcbm])y/$1$2un/
+    - xform/(^|[ '])([wpGkfcbmg])y/$1$2un/
     - xform/(^|[ '])([sdtlghzcnj])t/$1$2yun/
     - xform/(^|[ '])([gkbpmhf])i($|[^PTK])/$1$2ei$3/
     - xform/(^|[ '])([wtGpsdfghjklzcbnm])p/$1$2ing/
@@ -832,7 +839,7 @@ jyutping_to_putonghua_lookup:
     - xform/(^|[ '])(\w)l/$1$2ong/
     - xform/(^|[ '])(\w);/$1$2aam/
     - xform/(^|[ '])(\w)z/$1$2ou/
-    - xform/(^|[ '])(\w)x/$1$2oi/
+    - xform/(^|[ '])(N|c|d|e|g|h|k|l|n|p|s|t|z)x/$1$2oi/ # 外 ax 才 cx 待 dx 爱 ex 该 gx 开 hx 盖 kx 来 lx 内 nx 俖 px 思 sx 台 tx 在 zx
     - xform/(^|[ '])(\w)c/$1$2au/
     - xform/(^|[ '])(\w)v/$1$2eoi/
     - xform/(^|[ '])(\w)b/$1$2in/
@@ -851,6 +858,7 @@ jyutping_to_putonghua_lookup:
     - xform/Q/kw/
     - xform/N/ng/
     - xform/M/m/
+    - xform/Ñ/ng/
     - xform/E//
     - xform/mT/t/
     - xform/mK/k/
@@ -872,6 +880,9 @@ jyutping_to_putonghua_lookup:
     # - 'xform ([aeioumngptkqrwy])v $1⁵'
     #- 'xform r aa'
     #- 'xform q ng'
+  comment_format:
+    - 'xlit ABCDEFGHIJKLMNOPQRSTUVWXYZ 日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重'
+    - xform/ //
   tips: 【粵查普】
   #closing_tips: 【粵拼】
 
