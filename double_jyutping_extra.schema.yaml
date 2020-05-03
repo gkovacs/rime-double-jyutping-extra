@@ -14,6 +14,7 @@ schema:
   dependencies:
     - td_pinyin_flypy
     - terra_pinyin.extended
+    - terra_pinyin.extended.cangjie5
     - double_jyutping
     - leimaau_jyutping
     - leimaau_jyutping_zhuyin_nospaces
@@ -554,8 +555,8 @@ putonghua_to_jyutping_lookup:
   tag: putonghua_to_jyutping_lookup
   prefix: "q"  # 獨用jyutping_lookup反查在反查鍵「`」之後再鍵入〔大寫〕「J」
   suffix: "`"
-  dictionary: terra_pinyin.extended
-  prism: td_pinyin_flypy_display
+  dictionary: terra_pinyin.extended.cangjie5
+  prism: td_pinyin_flypy_cangjie5
   preedit_format:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
@@ -617,6 +618,7 @@ putonghua_to_jyutping_lookup:
     - 'xform ü/ ǘ'
     - 'xform ü[<,] ǚ'
     - 'xform ü[>\\.] ǜ'
+    - 'xlit ABCDEFGHIJKLMNOPQRSTUVWXYZ 日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重'
   comment_format:
     - xform zhi ㄓ
     - xform chi ㄔ
@@ -716,6 +718,7 @@ putonghua_to_jyutping_lookup:
     - xform 3 ˇ
     - xform 4 ˋ
     - xform 5 ˙
+    - 'xlit ABCDEFGHIJKLMNOPQRSTUVWXYZ 日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重'
     - xform/ //
   # comment_format:
   #   - xform ([aeiou])(ng?|r)([1234]) $1$3$2
@@ -1239,14 +1242,13 @@ cangjie5_lookup:    # 倉頡五代反查
   enable_sentence: false
   sentence_over_completion: false
   max_phrase_length: 1
-  prefix: "od"
+  #prefix: "od"
   suffix: "`"
   tips: 【仓】
   preedit_format:
-    - 'xform/^([a-z]*)$/$1\t（\U$1\E）/'
-    - "xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重|"
+    - "xlit|abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重|"
   comment_format:
-    - "xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重～|"
+    - "xlit|abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜重～|"
   disable_user_dict_for_patterns:
     - "^z.*$"
     - "^yyy.*$"
@@ -1292,12 +1294,12 @@ recognizer:
     uppercase: "^[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp:|mailto:).*$"
     #pinyin_lookup: "^`[a-z;/,.]*`?$"
-    putonghua_to_jyutping_lookup: "^q[a-z;/,.]*`?$"
+    putonghua_to_jyutping_lookup: "^q[a-zA-Z;/,.]*`?$"
     putonghua_to_cangjie_lookup: "^of[a-z;/,.]*`?$"
     jyutping_to_cangjie_lookup: "^oj[a-z;/,.]*`?$"
     international_lookup: "^oi[a-zA-Z;/,.]*`?$"
     stroke_lookup: "^os[a-z]*`?$"
-    cangjie5_lookup: "^od[a-z]*`?$"
+    cangjie5_lookup: "^[A-Z][a-z]*`?$"
     punct: ^/[0-9]?[a-z]*$
 
 zh_simp:

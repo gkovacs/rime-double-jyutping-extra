@@ -48,3 +48,9 @@ patch:
 ```
 
 Now reload RIME and it should appear under your layouts.
+
+You can also lookup via Cangjie by entering the first letter as capital (e.g. 明 = 日月 = Ab), but you will have to install the following package:
+
+```bash
+bash rime-install gkovacs/rime-cangjie-tradsimp
+```
