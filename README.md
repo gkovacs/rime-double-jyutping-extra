@@ -22,7 +22,24 @@ For initials which can be followed by either i or ei (d, n, s), -ei gets relocat
 
 "m" 唔 is entered by typing `mm`
 
-You can type either `q` or "\`" to temporarily switch to Putonghua lookup mode, if you don't know the Cantonese pronunciation for a word. In this mode you can enter words using the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy-extra/blob/master/README.md) method, and it will display the Jyutping next to the Chinese characters.
+## Look up Jyutping via Hanyu Pinyin
+
+You can type either `q` to temporarily switch to Putonghua lookup mode, if you don't know the Cantonese pronunciation for a word. In this mode you can enter words using the [Flypy Shuangpin (小鹤双拼)](https://github.com/gkovacs/rime-td-pinyin-flypy-extra/blob/master/README.md) method, and it will display the Jyutping next to the Chinese characters. For example, the Shuangpin for 香 (xiang1) is `xl`. So if you type `qxl` it will show that the Jyutping for 香 is `hoeng1`:
+
+![](images/pinyin-lookup.png)
+
+
+## Look up Jyutping via Cangjie
+
+If you know Cangjie (仓颉输入法), you can look up Jyutping for a character by typing the first letter in capital letters. For example, the Cangjie code for 化 is `op`. So if you type `Op` then it will show you that the Jyutping for 化 is `faa3`:
+
+![](images/cangjie-lookup.png)
+
+## Disambiguation via Cangjie
+
+If you know Cangjie (仓颉) or Sucheng (速成), you can enter the first Cangjie character after you enter Jyutping to further narrow down the candidates. For example, both 是 and 事 are `si6` in Jyutping. To disambiguate between them, you can enter `siA` for 是 (the first Cangjie character in 是 is 日 = a, so `siA` = `si日`) or `siJ` for 事 (the first Cangjie character in 事 is 十, so `siJ` = `si十`). You can also add the tone as an additional disambiguation character, so you can also write `si.A` or `siA.` (`si6日`) to make it even more specific that you want to enter `是`.
+
+![](images/cangjie-disambiguation.png)
 
 ## Installing
 
